@@ -1,7 +1,6 @@
 package com.goit.db;
 
 import com.goit.exception.DbException;
-import org.h2.Driver;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
