@@ -1,11 +1,11 @@
 package com.goit.query;
 
+import lombok.AllArgsConstructor;
+import lombok.ToString;
+
+@ToString
+@AllArgsConstructor
 public class MaxProjectCountClient {
     private String name;
     private int projectCount;
-
-    public MaxProjectCountClient(String name, int projectCount) {
-        this.name = name;
-        this.projectCount = projectCount;
-    }
 }

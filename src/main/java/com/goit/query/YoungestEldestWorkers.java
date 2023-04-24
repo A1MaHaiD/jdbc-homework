@@ -1,12 +1,14 @@
 package com.goit.query;
-public class YoungestEldestWorkers {
-    private String type;
-    private String name;
-    private long birthday;
 
-    public YoungestEldestWorkers(String type, String name, long birthday) {
-        this.type = type;
-        this.name = name;
-        this.birthday = birthday;
-    }
+import lombok.AllArgsConstructor;
+import lombok.ToString;
+
+import java.sql.Date;
+
+@ToString
+@AllArgsConstructor
+public class YoungestEldestWorkers {
+    private String type; //private Type type; //(enum)
+    private String name;
+    private Date birthday;
 }

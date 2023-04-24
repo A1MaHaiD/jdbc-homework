@@ -16,14 +16,15 @@ import java.util.List;
 
 public class DatabaseQueryService {
     public static void main(String[] args) {
-        List<MaxProjectCountClient> maxProjectCountClients = new DatabaseQueryService().findMaxProjectsClient();
-        System.out.println("Max project count clients: " + maxProjectCountClients);
-        List<MaxSalaryWorker> maxSalaryWorker = new DatabaseQueryService().findMaxSalaryWorker();
-        System.out.println("Max salary worker: " + maxSalaryWorker);
-        List<YoungestEldestWorkers> youngestEldestWorkers = new DatabaseQueryService().findYoungestEldestWorkers();
-        System.out.println("Youngest eldest workers: " + youngestEldestWorkers);
-        List<LongestProject> longestProject = new DatabaseQueryService().findLongestProject();
-        System.out.println("Longest project: " + longestProject);
+        DatabaseQueryService service = new DatabaseQueryService();
+        printList(service.findMaxProjectsClient());
+        printList(service.findMaxSalaryWorker());
+        printList(service.findLongestProject());
+        printList(service.findYoungestEldestWorkers());
+    }
+
+    private static void printList(List list){
+        System.out.println(list);
     }
 
     private List<LongestProject> findLongestProject() {
@@ -50,7 +51,7 @@ public class DatabaseQueryService {
                 list.add(new YoungestEldestWorkers(
                         resultSet.getString(1),
                         resultSet.getString(2),
-                        resultSet.getLong(3)));
+                        resultSet.getDate(3)));
             }
             return list;
         } catch (Exception e) {
@@ -59,7 +60,7 @@ public class DatabaseQueryService {
     }
 
     private List<MaxSalaryWorker> findMaxSalaryWorker() {
-        Reader sb = new Reader("sql/find_maxSalaryWorker.sql");
+        Reader sb = new Reader("sql/find_max_salary_worker.sql");
         List<MaxSalaryWorker> list = new ArrayList<>();
         try (Connection conn = Database.getInstance().getConnection();
              Statement stmt = conn.createStatement()) {

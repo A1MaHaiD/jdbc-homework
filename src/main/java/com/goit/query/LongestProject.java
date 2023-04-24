@@ -1,11 +1,11 @@
 package com.goit.query;
 
+import lombok.AllArgsConstructor;
+import lombok.ToString;
+
+@ToString
+@AllArgsConstructor
 public class LongestProject {
     private int id;
     private long dataDiff;
-
-    public LongestProject(int id, long dataDiff) {
-        this.id = id;
-        this.dataDiff = dataDiff;
-    }
 }

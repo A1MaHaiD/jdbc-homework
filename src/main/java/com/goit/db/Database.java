@@ -19,12 +19,12 @@ public class Database {
             throw new DbException("Instantiation of database failed", e);
         }
     }
-
     public static synchronized Database getInstance() {
-        if (instance == null) {
-            instance = new Database();
+        try {
+            return new Database();
+        } catch (Exception e) {
+            throw new DbException("Instantiation of Database failed", e);
         }
-        return instance;
     }
 
     public Connection getConnection() {
