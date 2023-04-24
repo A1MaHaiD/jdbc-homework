@@ -17,9 +17,13 @@ import java.util.List;
 public class DatabaseQueryService {
     public static void main(String[] args) {
         List<MaxProjectCountClient> maxProjectCountClients = new DatabaseQueryService().findMaxProjectsClient();
+        System.out.println("Max project count clients: " + maxProjectCountClients);
         List<MaxSalaryWorker> maxSalaryWorker = new DatabaseQueryService().findMaxSalaryWorker();
+        System.out.println("Max salary worker: " + maxSalaryWorker);
         List<YoungestEldestWorkers> youngestEldestWorkers = new DatabaseQueryService().findYoungestEldestWorkers();
+        System.out.println("Youngest eldest workers: " + youngestEldestWorkers);
         List<LongestProject> longestProject = new DatabaseQueryService().findLongestProject();
+        System.out.println("Longest project: " + longestProject);
     }
 
     private List<LongestProject> findLongestProject() {
