@@ -1,11 +1,12 @@
 package com.goit.query;
-
-import com.goit.emums.Type;
-
-import java.time.LocalDate;
-
 public class YoungestEldestWorkers {
-    private Type type;
+    private String type;
     private String name;
-    private LocalDate birthday;
+    private long birthday;
+
+    public YoungestEldestWorkers(String type, String name, long birthday) {
+        this.type = type;
+        this.name = name;
+        this.birthday = birthday;
+    }
 }

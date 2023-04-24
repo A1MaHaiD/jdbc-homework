@@ -14,6 +14,7 @@ public class Reader {
 
     public String read() {
         try (InputStream stream = Reader.class.getClassLoader().getResourceAsStream(resourceName)) {
+            assert stream != null;
             Scanner scanner = new Scanner(stream);
             StringBuilder builder = new StringBuilder();
             while (scanner.hasNextLine()) {

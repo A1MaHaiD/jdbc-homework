@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    private static final String H2_URL = "jdbc:h2:mem:local";
+    private static final String H2_URL = "jdbc:h2:./local";
     private static final String USER = "admin";
     private static final String PASSWORD = "12345";
     private static Database instance;
