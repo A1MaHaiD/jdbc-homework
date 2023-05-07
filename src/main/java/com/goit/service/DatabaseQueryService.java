@@ -4,7 +4,6 @@ import com.goit.db.Database;
 import com.goit.exception.DbException;
 import com.goit.query.*;
 import com.goit.reader.Reader;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -97,7 +96,7 @@ public class DatabaseQueryService {
         try (Connection conn = Database.getInstance().getConnection();
              Statement stmt = conn.createStatement()) {
             ResultSet resultSet = stmt.executeQuery(reader.read());
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 list.add(new PrintProjectPrices(
                         resultSet.getString(1),
                         resultSet.getInt(2)
