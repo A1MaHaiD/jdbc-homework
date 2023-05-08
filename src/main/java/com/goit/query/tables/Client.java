@@ -10,5 +10,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Client {
+    int id;
     String name;
+
+    public Client() {
+
+    }
 }

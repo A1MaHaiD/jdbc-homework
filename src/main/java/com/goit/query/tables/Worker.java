@@ -16,4 +16,8 @@ public class Worker {
     Date birthday;
     String level;
     int salary;
+
+    public Worker() {
+
+    }
 }

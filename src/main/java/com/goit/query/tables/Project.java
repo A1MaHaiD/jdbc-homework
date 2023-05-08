@@ -5,7 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 @Getter
 @Setter
@@ -15,4 +16,8 @@ public class Project {
     int clientId;
     Date startDate;
     Date finishDate;
+
+    public Project() {
+
+    }
 }

@@ -12,4 +12,8 @@ import lombok.ToString;
 public class ProjectWorker {
     int workerId;
     int projectId;
+
+    public ProjectWorker() {
+
+    }
 }
