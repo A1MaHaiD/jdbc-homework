@@ -22,7 +22,8 @@ public class DatabasePopulateService {
             /*Statement stmt = conn.prepareStatement(sb.read());
             stmt.execute(sb.read());
             stmt.close();
-            conn.close()*/;
+            conn.close()*/
+            ;
             PreparedStatement preparedStatement = data.prepareStatement(sb.read());
             preparedStatement.executeUpdate();
             preparedStatement.close();

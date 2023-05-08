@@ -3,12 +3,17 @@ package com.goit.service;
 import com.goit.db.Database;
 import com.goit.exception.DbException;
 import com.goit.query.*;
+import com.goit.query.tables.Worker;
 import com.goit.reader.Reader;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class DatabaseQueryService {
     public static void main(String[] args) {
@@ -106,5 +111,17 @@ public class DatabaseQueryService {
         } catch (Exception e) {
             throw new DbException("Connection or statement failed", e);
         }
+    }
+
+    public List<Worker> getWorkersDataFromFile() {
+    /*    Worker worker = new Worker();
+        String fileName = "txt/worker.txt";
+        InputStream inputStream = DatabaseQueryService.class.getClassLoader().getResourceAsStream(fileName);
+        try {
+            worker.getName(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+        return null;
     }
 }
