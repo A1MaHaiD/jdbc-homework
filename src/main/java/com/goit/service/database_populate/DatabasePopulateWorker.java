@@ -1,5 +1,6 @@
 package com.goit.service.database_populate;
 
+import com.goit.db.Database;
 import com.goit.query.tables.Worker;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,6 +20,7 @@ public class DatabasePopulateWorker {
     public void workerInsert() {
         List<Worker> workerList = addWorkerInfo();
         try {
+            connection = Database.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(
                     "INSERT INTO worker (name, birthday, level, salary) VALUES (?, ?, ?, ?)");
             for (Worker worker : workerList) {

@@ -1,5 +1,6 @@
 package com.goit.service.database_populate;
 
+import com.goit.db.Database;
 import com.goit.query.tables.Client;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,6 +19,7 @@ public class DatabasePopulateClient {
     public void clientInsert() {
         List<Client> clientList = addClientInfo();
         try {
+            connection = Database.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(
                     "INSERT INTO client (id, name) VALUES (?, ?)"
             );

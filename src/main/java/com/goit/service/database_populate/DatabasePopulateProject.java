@@ -1,5 +1,6 @@
 package com.goit.service.database_populate;
 
+import com.goit.db.Database;
 import com.goit.query.tables.Project;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class DatabasePopulateProject {
     public void projectInsert() {
         List<Project> projectList = addProjectInfo();
         try {
+            connection = Database.getInstance().getConnection();
             preparedStatement = connection.prepareStatement(
                     "INSERT INTO project (client_id, start_date, finish_date) VALUES (?, ?, ?)"
             );
