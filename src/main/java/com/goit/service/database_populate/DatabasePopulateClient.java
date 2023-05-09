@@ -28,6 +28,7 @@ public class DatabasePopulateClient {
                 preparedStatement.setString(2,client.getName());
             }
             preparedStatement.close();
+            connection.close();
         } catch (SQLException e){
             e.printStackTrace();
         }

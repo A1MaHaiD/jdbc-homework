@@ -30,6 +30,7 @@ public class DatabasePopulateProjectWorker {
                 preparedStatement.executeUpdate();
             }
             preparedStatement.close();
+            connection.close();
         } catch ( SQLException e){
             e.printStackTrace();
         }

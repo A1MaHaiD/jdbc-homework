@@ -31,6 +31,7 @@ public class DatabasePopulateWorker {
                 preparedStatement.executeUpdate();
             }
             preparedStatement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
