@@ -49,7 +49,7 @@ public class DatabasePopulateWorker {
 
     public List<Worker> addWorkerInfo() {
         List<Worker> workerList = new ArrayList<>();
-        String line = readFile("workers.txt");
+        String line = readFile("worker.txt");
         Scanner sc = new Scanner(line);
         while (sc.hasNextLine()) {
             String[] query = sc.nextLine().split(",");

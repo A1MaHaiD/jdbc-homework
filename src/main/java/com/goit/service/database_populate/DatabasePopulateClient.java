@@ -26,6 +26,7 @@ public class DatabasePopulateClient {
             for (Client client : clientList) {
                 preparedStatement.setInt(1,client.getId());
                 preparedStatement.setString(2,client.getName());
+                preparedStatement.executeUpdate();
             }
             preparedStatement.close();
             connection.close();
